@@ -1,0 +1,241 @@
+<button type="button" id="Modalvalidator" class="mt-5 mx-5 btn btn-primary" data-bs-toggle="modal" data-bs-target="#mimodal" hidden="true">modal validator</button>
+
+<div class="modal fade" id="mimodal" tabindex="1" aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Mensaje Informativo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="modaltext">
+                    
+                </div>
+               </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mimodal2" data-bs-dismiss="modal">Crear Nuevo Usuario</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type="button" id="ModalUserinformation" class="mt-5 mx-5 btn btn-primary" data-bs-toggle="modal" data-bs-target="#mimodal2" >modal Register</button>
+
+<div class="modal fade" id="mimodal2" tabindex="1" aria-hidden="true" aria-labelledby="modalTitle2" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="titulo">Formulario</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="modaltextregister">
+                    <form [formGroup]="formUser" (ngSubmit)="createUSer(formUser)">
+
+                        <div class="col-md-12 form-control row">
+                            <div class="col-md-12 input-group" >
+
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">NIT</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input formControlName="Id" type="text" maxlength="10" class="form-control" placeholder="Ingrese el Numero de NIT"
+                                    [class.green-input]="this.formUser.get('Id')?.valid"
+                                    [class.red-input]="this.formUser.get('Id')?.invalid && this.formUser.get('Id')?.touched"
+                                    >
+                                </div>
+                                <hr>
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">Type Document</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input formControlName="Name_Type_Document" type="text" class="form-control" placeholder="CC, CE, PS"
+                                    [class.green-input]="this.formUser.get('Name_Type_Document')?.valid"
+                                    [class.red-input]="this.formUser.get('Name_Type_Document')?.invalid && this.formUser.get('Name_Type_Document')?.touched"
+                                    >
+                                </div>
+
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">Number Document</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input formControlName="NumberDocument" type="text" maxlength="9" class="form-control" placeholder="Numero de documento"
+                                    [class.green-input]="this.formUser.get('NumberDocument')?.valid"
+                                    [class.red-input]="this.formUser.get('NumberDocument')?.invalid && this.formUser.get('NumberDocument')?.touched"
+                                    >
+                                </div>
+
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">Name Business</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input formControlName="NameBusiness" type="text" class="form-control" placeholder="Nombre de Empresa"
+                                    [class.green-input]="this.formUser.get('NameBusiness')?.valid"
+                                    [class.red-input]="this.formUser.get('NameBusiness')?.invalid && this.formUser.get('NameBusiness')?.touched"
+                                    >
+                                </div>
+
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">First Name</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input formControlName="FirstName" type="text" class="form-control" placeholder="Primer Nombre"
+                                    [class.green-input]="this.formUser.get('FirstName')?.valid"
+                                    [class.red-input]="this.formUser.get('FirstName')?.invalid && this.formUser.get('FirstName')?.touched"
+                                    >
+                                </div>
+                                
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">Middle Name</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input formControlName="MiddleName" type="text"  class="form-control" placeholder="Segundo Nombre"
+                                    [class.green-input]="this.formUser.get('MiddleName')?.valid"
+                                    [class.red-input]="this.formUser.get('MiddleName')?.invalid && this.formUser.get('MiddleName')?.touched"
+                                    >
+                                </div>
+                                
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">First Last Name</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input formControlName="FirstLastName" type="text"  class="form-control" placeholder="Primer Apellido"
+                                    [class.green-input]="this.formUser.get('FirstLastName')?.valid"
+                                    [class.red-input]="this.formUser.get('FirstLastName')?.invalid && this.formUser.get('FirstLastName')?.touched"
+                                    >
+                                </div>
+                                
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">Second Last Name</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input formControlName="SecondLastName" type="text"  class="form-control" placeholder="Segundo Apellido"
+                                    [class.green-input]="this.formUser.get('SecondLastName')?.valid"
+                                    [class.red-input]="this.formUser.get('SecondLastName')?.invalid && this.formUser.get('SecondLastName')?.touched"
+                                    >
+                                </div>
+                               
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">Email</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input formControlName="Email" type="text"  class="form-control" placeholder="Correo Electronico"
+                                    [class.green-input]="this.formUser.get('Email')?.valid"
+                                    [class.red-input]="this.formUser.get('Email')?.invalid && this.formUser.get('Email')?.touched"
+                                    >
+                                </div>
+
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">Authorize Phone</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input formControlName="AuthorizePhone" type="checkbox"  class="form-check-input position-static"
+                                    [class.green-input]="this.formUser.get('AuthorizePhone')?.valid"
+                                    [class.red-input]="this.formUser.get('AuthorizePhone')?.invalid && this.formUser.get('AuthorizePhone')?.touched"
+                                    >
+                                </div>
+                                
+                                <div class="col-md-4 input-label">
+                                    <label class="input-label">Authorize Email</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input formControlName="AuthorizeEmail" type="checkbox"  class="form-check-input position-static" 
+                                    [class.green-input]="this.formUser.get('AuthorizeEmail')?.valid"
+                                    [class.red-input]="this.formUser.get('AuthorizeEmail')?.invalid && this.formUser.get('AuthorizeEmail')?.touched"
+                                    >
+                                </div>
+
+                                
+
+                            </div>
+                            
+                        </div>
+                        <br>
+                        <div class="com-md-12 row">
+                            <div class="d-grid gap-2 col-md-6">
+                                <button [disabled]="this.formUser.invalid" type="submit" class="btn btn-success btn-lg" data-bs-dismiss="modal">
+                                    Continuar</button>
+                            </div>
+                            <div class="d-grid gap-2 col-md-6">
+                                <button type="" class="btn btn-success btn-lg" data-bs-dismiss="modal">
+                                    Regresar</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+               </div>
+            <div class="modal-footer">
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-12 offset-lg-0">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="titulo">Inscripción al Servicio</h3>
+                    <br>
+                    <p>Ingrese el NIT de la persona natural o jurídica para   la que realizara el trámite sin incluir el digito de verificación. Luego selecciones Continuar para completar su solicitud N.I.T.</p>
+                    <form [formGroup]="formNIT" (ngSubmit)="ReadIDNIT()">
+                        <div class="inputgroup input-group-lg nb-3">
+                            <input formControlName="NIT" type="text" maxlength="10" class="form-control" placeholder="Ingrese el Numero de NIT"
+                                [class.green-input]="this.formNIT.get('NIT')?.valid"
+                                [class.red-input]="this.formNIT.get('NIT')?.invalid && this.formNIT.get('NIT')?.touched"
+                            >
+
+                        </div>
+                        <br>
+                        <div class="com-md-12 row">
+                            <div class="d-grid gap-2 col-md-6">
+                                <button [disabled]="this.formNIT.invalid" type="submit" class="btn btn-success btn-lg">
+                                    Continuar></button>
+                            </div>
+                            <div class="d-grid gap-2 col-md-6">
+                                <button type="submit" class="btn btn-success btn-lg">
+                                    Regresar</button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="titulo">LISTADO DE EMPRESAS</h5>
+                    <table class="table">
+                        <tbody>
+                            <tr *ngFor="let business of ListBusiness[0]">
+                                <td>{{business.Id_PersonalData}}</td>
+                                <td>{{business.Name_KindOfPerson}}</td>
+                                <td>{{business.NameBusiness}}</td>
+                                <td>{{business.Adress}}</td>
+                                <td>{{business.Name_Municipality}}</td>
+                                <td>{{business.Phone}}</td>
+                                <td>
+                                    <i (click)="EditBussines(business)" class="far fa-edit text-info"></i>
+                                </td>
+                                <td>
+                                    <i (click)="DeleteBussines(business.Id)" class="far fa-trash-alt text-danger"></i>
+                                </td>
+                          </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
